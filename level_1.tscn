@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cebys38ad2htc"]
+
+[ext_resource type="PackedScene" uid="uid://d2o5fc241gfxt" path="res://block.tscn" id="1_7aejs"]
+[ext_resource type="PackedScene" uid="uid://clqlwdfxpgcsq" path="res://test_player.tscn" id="2_mm07s"]
+[ext_resource type="Texture2D" uid="uid://bf4eky3dcd21b" path="res://icon.svg" id="3_j0upe"]
+[ext_resource type="Script" path="res://icon.gd" id="4_uj3v8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p5xq7"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajb33"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.664292, 0.747474, 0, -0.747474, 0.664292, -9.53674e-07, 5.1466, 6.71253)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.565097, 0.825025, 0, -0.825025, 0.565097, 0, 9.60759, 0)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="DirectionalLight3D"]
+transform = Transform3D(1, 0, 0, 0, 0.565097, -0.825025, 0, 0.825025, 0.565097, 0, -5.57256, -8.13577)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DirectionalLight3D/Floor"]
+mesh = SubResource("BoxMesh_p5xq7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DirectionalLight3D/Floor"]
+shape = SubResource("BoxShape3D_ajb33")
+
+[node name="Block" parent="." instance=ExtResource("1_7aejs")]
+transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, -2.15826, 3, 0)
+
+[node name="TestPlayer" parent="." instance=ExtResource("2_mm07s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858809, 0)
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37259, 0)
+texture = ExtResource("3_j0upe")
+script = ExtResource("4_uj3v8")
