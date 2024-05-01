@@ -8,4 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	rotate_y(deg_to_rad(ROT_SPEED))
+
+
+func _on_body_entered(body):
+	queue_free()
