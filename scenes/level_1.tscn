@@ -28,15 +28,12 @@ ambient_light_source = 3
 
 [node name="Level1" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.913865, 0.406019, 0, -0.406019, 0.913865, -9.53674e-07, 5.1466, 6.71253)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.565097, 0.825025, 0, -0.825025, 0.565097, 0, 9.60759, 0)
 shadow_enabled = true
 
 [node name="Block" parent="." instance=ExtResource("1_nnbqb")]
-transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, -2.15826, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, 4.19884, 2.62861, 0)
 
 [node name="TestPlayer" parent="." instance=ExtResource("2_q3qyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858809, 0)
@@ -72,3 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98394, 1.67651, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fecmw")
+
+[node name="Block2" parent="." instance=ExtResource("1_nnbqb")]
+transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, 6.74744, 2.82012, 0)
+
+[node name="Block3" parent="." instance=ExtResource("1_nnbqb")]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 11.0756, 2.51581, 0)

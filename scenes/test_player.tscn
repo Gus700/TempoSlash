@@ -14,3 +14,12 @@ mesh = SubResource("BoxMesh_enjyo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_h5m15")
+
+[node name="CameraController" type="Node3D" parent="."]
+top_level = true
+
+[node name="CameraTarget" type="Node3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.789609, 0.61361, 0, -0.61361, 0.789609, 0, 1.52194, 2.81748)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget"]
+transform = Transform3D(1, 0, 0, 0, 0.9807, -0.195518, 0, 0.195518, 0.9807, 0, -0.332936, 0.568273)

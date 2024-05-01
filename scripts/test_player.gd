@@ -30,3 +30,6 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	# Move the camera postion to the player's position using lerp
+	$CameraController.position = lerp($CameraController.position,position,0.1)
