@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cebys38ad2htc"]
 
-[ext_resource type="PackedScene" uid="uid://d2o5fc241gfxt" path="res://block.tscn" id="1_7aejs"]
-[ext_resource type="PackedScene" uid="uid://clqlwdfxpgcsq" path="res://test_player.tscn" id="2_mm07s"]
-[ext_resource type="Texture2D" uid="uid://bf4eky3dcd21b" path="res://icon.svg" id="3_j0upe"]
-[ext_resource type="Script" path="res://icon.gd" id="4_uj3v8"]
+[ext_resource type="PackedScene" uid="uid://d2o5fc241gfxt" path="res://scenes/block.tscn" id="1_nnbqb"]
+[ext_resource type="PackedScene" uid="uid://clqlwdfxpgcsq" path="res://scenes/test_player.tscn" id="2_q3qyx"]
+[ext_resource type="Texture2D" uid="uid://bf4eky3dcd21b" path="res://icon.svg" id="3_8qm6k"]
+[ext_resource type="Script" path="res://scripts/icon.gd" id="4_pn0rj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p5xq7"]
 size = Vector3(10, 0.5, 10)
@@ -30,13 +30,13 @@ mesh = SubResource("BoxMesh_p5xq7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DirectionalLight3D/Floor"]
 shape = SubResource("BoxShape3D_ajb33")
 
-[node name="Block" parent="." instance=ExtResource("1_7aejs")]
+[node name="Block" parent="." instance=ExtResource("1_nnbqb")]
 transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, -2.15826, 3, 0)
 
-[node name="TestPlayer" parent="." instance=ExtResource("2_mm07s")]
+[node name="TestPlayer" parent="." instance=ExtResource("2_q3qyx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858809, 0)
 
 [node name="Icon" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37259, 0)
-texture = ExtResource("3_j0upe")
-script = ExtResource("4_uj3v8")
+texture = ExtResource("3_8qm6k")
+script = ExtResource("4_pn0rj")
