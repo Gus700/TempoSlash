@@ -24,7 +24,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		#line below is disabled to avoid player moving on z axis
-		#velocity.z = direction.z * SPEED
+		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

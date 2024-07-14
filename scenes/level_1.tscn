@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cebys38ad2htc"]
+[gd_scene load_steps=10 format=3 uid="uid://cebys38ad2htc"]
 
 [ext_resource type="PackedScene" uid="uid://d2o5fc241gfxt" path="res://scenes/block.tscn" id="1_nnbqb"]
 [ext_resource type="PackedScene" uid="uid://clqlwdfxpgcsq" path="res://scenes/test_player.tscn" id="2_q3qyx"]
 [ext_resource type="Texture2D" uid="uid://bf4eky3dcd21b" path="res://icon.svg" id="3_8qm6k"]
 [ext_resource type="Script" path="res://scripts/icon.gd" id="4_pn0rj"]
-[ext_resource type="PackedScene" uid="uid://cpclle18mw2l4" path="res://scenes/coin.tscn" id="5_l3pkx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p5xq7"]
 size = Vector3(10, 0.5, 3)
@@ -39,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, 4.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858809, 0)
 
 [node name="Icon" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37259, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5043, 2.37259, 2.26801)
 texture = ExtResource("3_8qm6k")
 script = ExtResource("4_pn0rj")
 
@@ -53,25 +52,5 @@ mesh = SubResource("BoxMesh_p5xq7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_ajb33")
 
-[node name="Floor2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -5.96047e-08, 0, 5.96047e-08, 1, 11.2579, 0.818032, 0)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2"]
-mesh = SubResource("BoxMesh_p5xq7")
-skeleton = NodePath("../../Floor2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
-shape = SubResource("BoxShape3D_ajb33")
-
-[node name="Coin" parent="." instance=ExtResource("5_l3pkx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98394, 1.67651, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fecmw")
-
-[node name="Block2" parent="." instance=ExtResource("1_nnbqb")]
-transform = Transform3D(1, 0, 0, 0, 0.659516, -0.75169, 0, 0.75169, 0.659516, 6.74744, 2.82012, 0)
-
-[node name="Block3" parent="." instance=ExtResource("1_nnbqb")]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 11.0756, 2.51581, 0)
